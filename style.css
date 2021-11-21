@@ -76,19 +76,6 @@ img {
     background: burlywood ;
 }
 
-@media (max-width: 600px) {
-    .navbar {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
-    .navbar a {
-        width: 100%;
-    }
-    .row {
-        flex-wrap: wrap;
-    }
-}
 
 #contact {
     width: 800px;
@@ -152,4 +139,29 @@ form button:active {
     min-height: 73vh;
     overflow: auto;
     box-sizing: border-box;
+}
+
+
+@media (max-width: 600px) {
+    .header p{
+        font-size: 15px;
+    }
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .navbar a {
+        width: 100%;
+    }
+    .row {
+        flex-wrap: wrap;
+    }
+    .contenu {
+        width: 100%;
+    }
+    .image img {
+        max-width: 90%;
+        height: 60%;
+    }
 }
