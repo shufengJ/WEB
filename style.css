@@ -3,6 +3,7 @@ body {
     margin: 0;
     height: 100%;
     width: 100%;
+    background-color: lightgreen;
 
 }
 
@@ -16,6 +17,8 @@ body {
 
 img {
     border-radius: 15px;
+    border-style:groove;
+    background : Salmon;
 }
 
 .header p{
