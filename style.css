@@ -115,6 +115,10 @@ form button:active {
 }
 
 
+#tb,#tb tr td, #tb tr th{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
 
 
 .contenu {
@@ -183,6 +187,10 @@ form button:active {
     form input, form textarea {
         max-width: 90%;
     }
+    #tb {
+        max-width: 100%;
+    }
+
     #ajout {
         padding: 2px;
         max-width: 100%;
