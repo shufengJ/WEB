@@ -264,4 +264,14 @@ form button:active {
         width: 90%;
         height: 30px;
     }
+    
+    textarea {
+        width : 30%;
+        height : 35%;
+    }
+
+    img {
+        position : absolute;
+        bottom : 200px;
+    }
 }
