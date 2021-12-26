@@ -4,44 +4,51 @@
   <meta charset="UTF-8">
   <title>Title</title>
   <meta name="viewport" content="width=device-width minimum-scale:1.0">
-  <link rel="stylesheet" href="Style.css">
+  <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
-  <img alt="" src="">
-<form name="questionnaire"> <p class="loveanimal"> Aimez-vous les animaux ? </p>
+<img alt="" src="">
+<form name="questionnaire" action="#" method="get" onsubmit="return ValidForm()"> <p class="loveanimal"> Aimez-vous les animaux ? </p>
   <div>
-  <input id="answer-loveanimal0" name="answer-la" type="radio" value="Oui"> <label for="answer-loveanimal0"> Oui </label>
-<input id="answer-loveanimal1" name="answer-la" type="radio" value="Non"> <label for="answer-loveanimal1"> Non </label>
+    <input id="answer-loveanimal0" name="answer-la" type="radio" value="Oui"> <label for="answer-loveanimal0"> Oui </label>
+    <input id="answer-loveanimal1" name="answer-la" type="radio" value="Non"> <label for="answer-loveanimal1"> Non </label>
   </div>
-<br>
+  <br>
   <div>
-<p class="getanimal"> Avez-vous un/plusieurs animal/animaux ?</p>
-  <input id="answer-getanimal0" name="answer-ga" type="radio" value="Oui" onclick="ajoutTexte();"> <label for="answer-getanimal0"> Oui </label>
-  <input id="answer-getanimal1" name="answer-ga" type="radio" value="Non" onclick="retireTexte();"> <label for="answer-getanimal1"> Non </label>
+    <p class="getanimal"> Avez-vous un/plusieurs animal/animaux ?</p>
+    <input id="answer-getanimal0" name="answer-ga" type="radio" value="Oui" onclick="ajoutTexte();"> <label for="answer-getanimal0"> Oui </label>
+    <input id="answer-getanimal1" name="answer-ga" type="radio" value="Non" onclick="retireTexte();"> <label for="answer-getanimal1"> Non </label>
   </div>
-<br>
-<div id="youranimals"><label>
-  <textarea placeholder="Ecrivez-ici les animaux que vous avez (seul l'animal suffit, on ne demande pas la race)"></textarea>
-</label></div>
-<br>
-<p class="hunter"> Devrait-on interdire la chasse? </p>
-  <input id="answer-hunter0" name="answer-h" type="radio" value="Oui"> <label for="answer-hunter0"> Oui </label>
-  <input id="answer-hunter1" name="answer-h" type="radio" value="Non"> <label for="answer-hunter1"> Non </label>
-<br>
-  <p class="needanimal"> Avez-vous déjà aidé des animaux dans le besoin ? </p>
-  <input id="answer-needanimal0" name="answer-na" type="radio" value="Oui" onclick="ajoutTexte()"> <label for="answer-needanimal0"> Oui </label>
-  <input id="answer-needanimal1" name="answer-na" type="radio" value="Non" onclick="retireTexte()"> <label for="answer-needanimal1"> Non </label>
-<br>
+  <br>
+  <div id="youranimals"><label>
+    <textarea placeholder="Ecrivez-ici les animaux que vous avez (seul l'animal suffit, on ne demande pas la race)"></textarea>
+  </label></div>
+  <br>
+  <div>
+    <p class="hunter"> Devrait-on interdire la chasse? </p>
+    <input id="answer-hunter0" name="answer-h" type="radio" value="Oui"> <label for="answer-hunter0"> Oui </label>
+    <input id="answer-hunter1" name="answer-h" type="radio" value="Non"> <label for="answer-hunter1"> Non </label>
+  </div>
+  <br>
+  <div>
+    <p class="needanimal"> Avez-vous déjà aidé des animaux dans le besoin ? </p>
+    <input id="answer-needanimal0" name="answer-na" type="radio" value="Oui" onclick="ajoutTexte()"> <label for="answer-needanimal0"> Oui </label>
+    <input id="answer-needanimal1" name="answer-na" type="radio" value="Non" onclick="retireTexte()"> <label for="answer-needanimal1"> Non </label>
+  </div>
+  <br>
   <div id="yourneedanimals"><label>
     <textarea placeholder="Ecrivez-ici vos expériences particulières avec les animaux en besoin"></textarea>
-  </label></div>
+  </label>
+  </div>
 
   <p class="vegan"> Suivez-vous un régime spécial ? (végétarien/végatalien...) </p>
-  <input id="answer-vegan0" name="answer-v" type="radio" value="Oui" > <label for="answer-vegan0"> Oui </label>
-  <input id="answer-vegan1" name="answer-v" type="radio" value="Non"> <label for="answer-vegan1"> Non </label>
-<br>
-  <input type="button" id="verifier" onclick="ValidForm()" value="OK">
+  <div>
+    <input id="answer-vegan0" name="answer-v" type="radio" value="Oui" > <label for="answer-vegan0"> Oui </label>
+    <input id="answer-vegan1" name="answer-v" type="radio" value="Non"> <label for="answer-vegan1"> Non </label>
+  </div>
+  <br>
+  <input type="submit" id="verifier"  value="OK">
   <input type="button" id="envoi" onclick="CountForm()" value="Envoyer" disabled="disabled">
 </form>
 
@@ -56,37 +63,39 @@
 
 
   function ajoutTexte() {let animal = document.getElementById("answer-getanimal0")
-   let needanimal = document.getElementById("answer-needanimal0")
-  if (animal.checked === true ) {
-    youranimals.style.display = "contents";
-  }
-  if (needanimal.checked === true) {
-    yourneedsanimals.style.display = "contents";
+    let needanimal = document.getElementById("answer-needanimal0")
+    if (animal.checked === true ) {
+      youranimals.style.display = "contents";
+    }
+    if (needanimal.checked === true) {
+      yourneedsanimals.style.display = "contents";
 
-  }}
+    }}
 
- function retireTexte() {let animal = document.getElementById("answer-getanimal1")
-   let needanimal = document.getElementById("answer-needanimal1")
-   if (animal.checked === true) {
-     youranimals.style.display = "none";
-   }
-   if (needanimal.checked === true) {
-     yourneedsanimals.style.display = "none";
-   }}
+  function retireTexte() {let animal = document.getElementById("answer-getanimal1")
+    let needanimal = document.getElementById("answer-needanimal1")
+    if (animal.checked === true) {
+      youranimals.style.display = "none";
+    }
+    if (needanimal.checked === true) {
+      yourneedsanimals.style.display = "none";
+    }}
 
   function ValidForm() {
     var all = document.forms["questionnaire"];
     var inputs = all.elements;
     var count  = 0;
 
-    document.getElementById("envoi").removeAttribute("disabled");
 
     for (var i = 0; i < inputs.length; i++) {
       if (inputs[i].type === 'radio' && inputs[i].checked === false) {
-      count++;}}
+        count++;}}
     if(count===10) {
       alert("Veuillez remplir le formulaire");
-    }}
+      return false;}
+    else{
+      document.getElementById("envoi").removeAttribute("disabled");
+      return false;}}
 
   function CountForm() {
     var all = document.forms["questionnaire"];
