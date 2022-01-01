@@ -270,7 +270,7 @@ form button:active {
         height : 35%;
     }
 
-    img {
+    span img {
         position : absolute;
         bottom : 200px;
     }
