@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Signe in/up</title>
+    <title>Sign in/up</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -47,11 +47,129 @@
 
 </div>
 
+<img alt="" src="">
+<form name="questionnaire" action="#" method="get" onsubmit="return ValidForm()"> <p class="loveanimal"> Aimez-vous les animaux ? </p>
+  <div>
+    <input id="answer-loveanimal0" name="answer-la" type="radio" value="Oui"> <label for="answer-loveanimal0"> Oui </label>
+    <input id="answer-loveanimal1" name="answer-la" type="radio" value="Non"> <label for="answer-loveanimal1"> Non </label>
+  </div>
+  <br>
+  <div>
+    <p class="getanimal"> Avez-vous un/plusieurs animal/animaux ?</p>
+    <input id="answer-getanimal0" name="answer-ga" type="radio" value="Oui" onclick="ajoutTexte();"> <label for="answer-getanimal0"> Oui </label>
+    <input id="answer-getanimal1" name="answer-ga" type="radio" value="Non" onclick="retireTexte();"> <label for="answer-getanimal1"> Non </label>
+  </div>
+  <br>
+  <div id="youranimals"><label>
+    <textarea placeholder="Ecrivez-ici les animaux que vous avez (seul l'animal suffit, on ne demande pas la race)"></textarea>
+  </label></div>
+  <br>
+  <div>
+    <p class="hunter"> Devrait-on interdire la chasse? </p>
+    <input id="answer-hunter0" name="answer-h" type="radio" value="Oui"> <label for="answer-hunter0"> Oui </label>
+    <input id="answer-hunter1" name="answer-h" type="radio" value="Non"> <label for="answer-hunter1"> Non </label>
+  </div>
+  <br>
+  <div>
+    <p class="needanimal"> Avez-vous déjà aidé des animaux dans le besoin ? </p>
+    <input id="answer-needanimal0" name="answer-na" type="radio" value="Oui" onclick="ajoutTexte()"> <label for="answer-needanimal0"> Oui </label>
+    <input id="answer-needanimal1" name="answer-na" type="radio" value="Non" onclick="retireTexte()"> <label for="answer-needanimal1"> Non </label>
+  </div>
+  <br>
+  <div id="yourneedanimals"><label>
+    <textarea placeholder="Ecrivez-ici vos expériences particulières avec les animaux en besoin"></textarea>
+  </label>
+  </div>
+
+  <p class="vegan"> Suivez-vous un régime spécial ? (végétarien/végatalien...) </p>
+  <div>
+    <input id="answer-vegan0" name="answer-v" type="radio" value="Oui" > <label for="answer-vegan0"> Oui </label>
+    <input id="answer-vegan1" name="answer-v" type="radio" value="Non"> <label for="answer-vegan1"> Non </label>
+  </div>
+  <br>
+  <input type="submit" id="verifier"  value="OK">
+  <input type="button" id="envoi" onclick="CountForm()" value="Envoyer" disabled="disabled">
+</form>
+
+<p id="resultat"> </p>
+
+<script>
+  let youranimals = document.querySelector("#youranimals");
+  let yourneedsanimals = document.querySelector("#yourneedanimals");
+
+  yourneedsanimals.style.display = "none";
+  youranimals.style.display = "none";
+
+
+  function ajoutTexte() {let animal = document.getElementById("answer-getanimal0")
+    let needanimal = document.getElementById("answer-needanimal0")
+    if (animal.checked === true ) {
+      youranimals.style.display = "contents";
+    }
+    if (needanimal.checked === true) {
+      yourneedsanimals.style.display = "contents";
+
+    }}
+
+  function retireTexte() {let animal = document.getElementById("answer-getanimal1")
+    let needanimal = document.getElementById("answer-needanimal1")
+    if (animal.checked === true) {
+      youranimals.style.display = "none";
+    }
+    if (needanimal.checked === true) {
+      yourneedsanimals.style.display = "none";
+    }}
+
+  function ValidForm() {
+    var all = document.forms["questionnaire"];
+    var inputs = all.elements;
+    var count  = 0;
+    var count1 = 0;
+
+    for (var i = 0; i < inputs.length; i++) {
+      if (inputs[i].type === 'radio' && inputs[i].checked) {count1++;}
+      if (inputs[i].type === 'radio' && inputs[i].checked === false) {
+        count++;}}
+    if(count===10) {
+      alert("Veuillez remplir le formulaire");
+      return false;}
+    else if(count1 < 5 ) {
+      alert("Cochez bien chaque bouton du formulaire");
+      return false;
+    }
+    else{
+      document.getElementById("envoi").removeAttribute("disabled");
+      return false;}}
+
+  function CountForm() {
+    var all = document.forms["questionnaire"];
+    var inputs = all.elements;
+    var count  = 0;
+    let resultat;
+
+
+    for (var i = 0; i < inputs.length; i++) {
+      if (inputs[i].type === 'radio' && inputs[i].checked && inputs[i].value === "Oui") {
+        count++;
+      }
+    }
+    resultat = document.getElementById("resultat");
+    if (count >= 0 && count <= 2) {resultat.textContent = "Vous devriez vérifier si Wilderful est fait pour vous, très peu de critères sont vérifiés..."}
+    else if(count >= 3 && count <= 4) {resultat.textContent = "Vous correspondez à nos attentes, merci de vous inscrire"}
+    else {resultat.textContent = "Nous vous attendons avec enthousiasme, Wilderful est fait pour vous !";
+      const img = document.querySelector("img");
+      img.src = "https://th.bing.com/th/id/R.0047bb2db9ee6e3ee957c0b1a6d0c1f2?rik=II8K%2bEruqOLoPg&riu=http%3a%2f%2fgifimage.net%2fwp-content%2fuploads%2f2017%2f10%2fconfetti-animated-gif-13.gif&ehk=kHv48Uo%2fbCzMDu0SJIUaZYUfOTjfwi1OhcUEuOmCTG0%3d&risl=&pid=ImgRaw&r=0";}
+
+  }
+
+</script>
+    
 <div class="footer">
     <a href="Apropos.html">©À propos</a>
 </div>
 
 
 <script src="Sign.js"></script>
+    
 </body>
 </html>
