@@ -20,7 +20,7 @@ body {
 }
 
 .imageAnime {
-        position : absolute;
+        position : relative;
         bottom : 70%;
 }
 
