@@ -22,7 +22,8 @@ body {
 
 .imageAnime {
         position : absolute;
-        bottom : 70%;
+        top: 20%;
+        bottom : 20%;
 }
 
 .accueil {
