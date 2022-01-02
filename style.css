@@ -92,6 +92,8 @@ body {
 
 #date {
     text-align :  right;
+    position: relative;
+    top: 5%;
 }
 
 
