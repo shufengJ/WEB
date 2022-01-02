@@ -256,7 +256,7 @@ figure {
     flex-flow: column;
     padding: 5px;
     margin: auto;
-    max-width: 10%;
+    max-width: 70%;
 }
 
 @media (max-width: 650px) {
