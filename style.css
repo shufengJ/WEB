@@ -8,6 +8,7 @@ body {
 
 .container1 {
     text-align: center;
+    height : 10%;
     background : white;
 }
 
@@ -22,6 +23,7 @@ body {
 .imageAnime {
         position : absolute;
         top: 20%;
+        left: 50%;
 }
 
 .accueil {
