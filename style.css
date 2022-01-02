@@ -47,16 +47,23 @@ body {
     width: 100%;
 }
 
-.navbar a {
-    float: left;
-    font-family: Yrsa, sans-serif;
-    display: block; /*块级元素,尽可能撑满容器*/
-    color: black;
-    text-align: center;
-    padding: 10px;
-    width: 20%;
-    text-decoration: none;
+.navbar a{
+  float: left;
+  font-family: Yrsa, sans-serif;
+  display: block; /*块级元素,尽可能撑满容器*/
+  color: black;
+  text-align: center;
+  padding: 10px;
+  width: 23.5%;
+  text-decoration: none;
+}
 
+.troisd a {
+  border-style : inset;
+}
+
+.navbar a:visited {
+  color : lightskyblue;
 }
 
 .navbar a:hover {
