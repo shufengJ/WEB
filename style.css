@@ -212,6 +212,16 @@ form button:active {
     height: 80%;
 }
 
+    textarea {
+        width : 30%;
+        height : 35%;
+    }
+
+    #imageAnime {
+        position : absolute;
+        bottom : 1500px;
+    }
+
 
 @media (max-width: 650px) {
     .header p{
@@ -263,15 +273,5 @@ form button:active {
     .sign-container input {
         width: 90%;
         height: 30px;
-    }
-    
-    textarea {
-        width : 30%;
-        height : 35%;
-    }
-
-    #imageAnime {
-        position : absolute;
-        bottom : 1500px;
     }
 }
