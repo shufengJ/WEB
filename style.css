@@ -20,6 +20,10 @@ body {
     color: white;
 }
 
+.3d {
+    border-style : inset; 
+}
+
 .imageAnime {
         position : absolute;
         top: 18%;
