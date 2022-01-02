@@ -90,6 +90,10 @@ body {
     background: burlywood ;
 }
 
+#date {
+    text-align :  right;
+}
+
 
 #contact {
     width: 800px;
