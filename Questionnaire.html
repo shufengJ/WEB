@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>Questionnaire</title>
   <meta name="viewport" content="width=device-width minimum-scale:1.0">
   <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
-<img alt="" src="">
+<img id="imageAnime" alt="" src="">
 <form name="questionnaire" action="#" method="get" onsubmit="return ValidForm()"> <p class="loveanimal"> Aimez-vous les animaux ? </p>
   <div>
     <input id="answer-loveanimal0" name="answer-la" type="radio" value="Oui"> <label for="answer-loveanimal0"> Oui </label>
@@ -85,14 +85,19 @@
     var all = document.forms["questionnaire"];
     var inputs = all.elements;
     var count  = 0;
-
+    var count1 = 0;
 
     for (var i = 0; i < inputs.length; i++) {
+      if (inputs[i].type === 'radio' && inputs[i].checked) {count1++;}
       if (inputs[i].type === 'radio' && inputs[i].checked === false) {
         count++;}}
     if(count===10) {
       alert("Veuillez remplir le formulaire");
       return false;}
+    else if(count1 < 5 ) {
+      alert("Cochez bien chaque bouton du formulaire");
+      return false;
+    }
     else{
       document.getElementById("envoi").removeAttribute("disabled");
       return false;}}
@@ -113,8 +118,8 @@
     if (count >= 0 && count <= 2) {resultat.textContent = "Vous devriez vérifier si Wilderful est fait pour vous, très peu de critères sont vérifiés..."}
     else if(count >= 3 && count <= 4) {resultat.textContent = "Vous correspondez à nos attentes, merci de vous inscrire"}
     else {resultat.textContent = "Nous vous attendons avec enthousiasme, Wilderful est fait pour vous !";
-      const img = document.querySelector("img");
-      img.src = "https://th.bing.com/th/id/R.0047bb2db9ee6e3ee957c0b1a6d0c1f2?rik=II8K%2bEruqOLoPg&riu=http%3a%2f%2fgifimage.net%2fwp-content%2fuploads%2f2017%2f10%2fconfetti-animated-gif-13.gif&ehk=kHv48Uo%2fbCzMDu0SJIUaZYUfOTjfwi1OhcUEuOmCTG0%3d&risl=&pid=ImgRaw&r=0";}
+      const img = document.querySelector("#imageAnime");
+      img.src = "Confetti.gif";}
 
   }
 
