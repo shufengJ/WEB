@@ -110,7 +110,7 @@ body {
 
 #date {
     text-align :  right;
-    position: relative;
+    position: absolute;
     bottom: 100%;
 }
 
