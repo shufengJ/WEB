@@ -13,6 +13,7 @@
     <a href="Accueil.html"> <img class="accueil" src="Wilderful%20Logo.png" alt="logo" width="100" height="54" style="float: left;"> </a>
     <p>Association pour protéger les animaux</p> 
 </div>
+<!-- en-tête -->
 <div class="navbar">
     <span class="troisd"> <a href="Accueil.html"> Accueil </a> </span>
     <span> <a href="Historique.html"> Historique </a> </span>
@@ -20,8 +21,8 @@
     <!-- <a href="Ajouteven.html">Ajout événement</a> -->
     <span> <a href="sign.html"> Log in/Sign Up </a> </span>
 </div>
-  
-<img class="imageAnime" alt="" src="#">
+<!-- Barre de navigation -->
+<img class="imageAnime" alt="" src="#"> <!-- Image avec des confettis si l'utilisateur coche Oui à réponse chaque questionnaire et que ensuite, il l'envoie -->
 <form name="questionnaire" action="#" method="get" onsubmit="return ValidForm()"> <p class="loveanimal"> Aimez-vous les animaux ? </p>
   <div>
     <input id="answer-loveanimal0" name="answer-la" type="radio" value="Oui"> <label for="answer-loveanimal0"> Oui </label>
@@ -62,7 +63,7 @@
   </div>
   <br>
   <input type="submit" id="verifier"  value="OK">
-  <input type="button" id="envoi" onclick="CountForm()" value="Envoyer" disabled="disabled">
+  <input type="button" id="envoi" onclick="CountForm()" value="Envoyer" disabled="disabled"> <!-- Si l'utilisateur n'envoie pas correctement le formulaire, le bouton OK ci-dessus ne pourra pas activer le bouton Envoyer -->
 </form>
 
 <p id="resultat"> </p>
@@ -75,7 +76,7 @@
 </div>
 
 <script src="Date.js"></script>
-
+<!-- Affichage de la date -->
 <script>
   let youranimals = document.querySelector("#youranimals");
   let yourneedsanimals = document.querySelector("#yourneedanimals");
