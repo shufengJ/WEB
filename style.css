@@ -104,6 +104,11 @@ body {
     background: burlywood ;
 }
 
+.footer a {
+  position: relative; /* required to declare a z-index property and create new stacking context */
+  z-index: 1;
+}
+
 .actimg {
     margin: 8%;
 }
