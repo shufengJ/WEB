@@ -82,6 +82,13 @@ body {
 
 }
 
+.spa, .monaco {
+    border : ridge 2px;
+    border-color : yellow orange;
+    border-radius : 1px;
+}
+    
+
 .main {
     flex: 70%;
     background-color: beige;
