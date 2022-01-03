@@ -46,7 +46,7 @@ body {
 .navbar a{
   float: left;
   font-family: Yrsa, sans-serif;
-  display: block; /*块级元素,尽可能撑满容器*/
+  display: block; 
   color: black;
   text-align: center;
   padding: 10px;
@@ -105,7 +105,7 @@ body {
 }
 
 .footer a {
-  position: relative; /* required to declare a z-index property and create new stacking context */
+  position: relative; 
   z-index: 1;
 }
 
