@@ -97,6 +97,10 @@ body {
     background: burlywood ;
 }
 
+.actimg {
+    margin: 10%;
+}
+
 #date {
     text-align :  right;
     position: relative;
