@@ -97,8 +97,8 @@ body {
     background: burlywood ;
 }
 
-.actimg {
-    margin: 10%;
+.actimg figure {
+    margin: 30%;
 }
 
 #date {
