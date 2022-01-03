@@ -52,6 +52,8 @@ body {
   padding: 10px;
   width: 23.5%;
   text-decoration: none;
+  position: relative;
+  z-index: 1;
 }
 
 .troisd a {
